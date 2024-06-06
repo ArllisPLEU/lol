@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Serwis komputerowy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formularz.css">
+    <link rel="icon" href="ikona.png">
+</head>
+<body>
+    <div id="glowny">
+        <div id="zdjecie">
+            <img src="baner.png" id="img1">
+            <div id="prawastronabaneru">Godziny otwarcia:</div>
+            <div id="prawastronabaneru2">pon-pią - 7:00-17:00<br>sob - 9:00-14:00<br><div id="czas"></div></div>
+            <div id="panel">
+                <a href="index.html"><div id="podstrona1">Strona główna</div></a>
+                <a href="firma.html"><div id="podstrona1">O Firmie</div></a>
+                <a href="oferta.html"><div id="podstrona1">Oferta</div></a>
+                <a href="serwis.html"><div id="podstrona1">Serwis</div></a>
+                <a href="wyslij.html"><div id="podstrona1">Wyślij do nas laptopa</div></a>
+                <a href="dojechac.html"><div id="podstrona1">Jak do nas dojechać</div></a>
+                <a href="kontakt.html"><div id="podstrona1">Kontakt</div></a>
+            </div>
+        </div>
+        <form id="formularz0" name="formul">
+            <!--FORMULARZ-->
+            <p style="background-color:rgb(206, 206, 206);text-align:center;font-size:4vh;">Formularz kontaktowy</p>
+            <p style="background-color:rgb(206, 206, 206);font-size:3vh;">Imię i nazwisko</p><input type="text" id="formularz1" />
+            <p style="background-color:rgb(206, 206, 206);font-size:3vh;">Adres email</p><input type="email" id="formularz1" />
+            <p style="background-color:rgb(206, 206, 206);font-size:3vh;">Temat</p><input type="text" id="formularz1" />
+            <p style="background-color:rgb(206, 206, 206);font-size:3vh;">Treść wiadomości</p><textarea id="formularz2"></textarea>
+            <p style="background-color:rgb(206, 206, 206);font-family: Verdana;"><input type="checkbox" name="regulamin" /><a href="regulamin.html" style="background-color:rgb(206, 206, 206);font-family: Verdana;color:black">Akceptujesz regulamin</a></p>
+            <p style="background-color:rgb(206, 206, 206);"><input type="button" value="Wyślij" id="przyciskform" onclick="reg()" /></p>
+            <div id="tresc" style="background-color:rgb(206, 206, 206);font-family:Verdana;font-weight:bold;font-size:3vh"></div>
+        </form>
+
+        <div id="panel1">
+            <p style="color:black; background-color: rgb(206, 206, 206); font-size:3vh">Adres: ul. Ułańska 4, 99-400 Łowicz</p>
+            <p style="color:black; background-color: rgb(206, 206, 206); font-size:3vh">Telefon: <a href="tel:575730354" style="text-decoration: none; color: grey; background-color: rgb(206, 206, 206)">575-730-354</a></p>
+            <p style="color:black; background-color: rgb(206, 206, 206); font-size:3vh">E-mail: <a href="mailto:filip.dawid123@protonmail.com" style="text-decoration: none; color: grey; background-color: rgb(206, 206, 206)">filip.dawid123@protonmail.com</a></p>
+            <p style="color:black; background-color: rgb(206, 206, 206); font-size:3vh">W okresie wakacyjnym w miesiącach Lipiec - Sierpień,<br /> serwis pracuje od poniedziałku do piątku.<br /> W soboty serwis jest zamknięty.</p>
+        </div>
+        
+        <div id="panel2">
+            <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d294.78224657181363!2d19.928103420436678!3d52.100814259902386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471be63d7f7d3565%3A0x56f0c21a4a0a290a!2zVcWCYcWEc2thIDQsIDk5LTMxMSDFgW93aWN6!5e0!3m2!1spl!2spl!4v1717691445683!5m2!1spl!2spl"></iframe>
+        </div>
+    </div>
+
+    <script>
+        //ZEGAR
+        function zegar() {
+            var czas = new Date();
+            var godzina = czas.getHours();
+            var minuta = czas.getMinutes();
+            var sekunda = czas.getSeconds();
+            var tygodnie = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"]
+            if (minuta < 10) {
+                var minuta = "0" + minuta;
+            }
+            if (sekunda < 10) {
+                var sekunda = "0" + sekunda;
+            }
+
+            document.getElementById("czas").innerHTML = "Aktualna data: " + tygodnie[czas.getDay()] + " " + godzina + ":" + minuta + ":" + sekunda;
+        }
+        setInterval("zegar()", 200);
+    </script>
+
+    <script>
+        //REGULAMIN
+        function reg() {
+            if (document.formul.regulamin.checked) {
+                document.getElementById("tresc").innerHTML = "";
+                document.getElementById("tresc").style.color = "black";
+                document.getElementById("tresc").innerHTML = "Twój formularz został wysłany";
+            }
+            else {
+                document.getElementById("tresc").innerHTML = "";
+                document.getElementById("tresc").style.color = "red";
+                document.getElementById("tresc").innerHTML = "Aby twój formularz został wysłany musisz <br> wyrazić zgodę na regulamin";
+            }
+        }
+    </script>
+</body>
+</html>

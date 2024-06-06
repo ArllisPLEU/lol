@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Serwis komputerowy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ikona.png">
+</head>
+<body onload="ciastka()">
+    <div id="glowny">
+        <div id="zdjecie">
+            <img src="baner.png" id="img1">
+            <div id="prawastronabaneru">Godziny otwarcia:</div>
+            <div id="prawastronabaneru2">pon-pią - 7:00-17:00<br>sob - 9:00-14:00<br><div id="czas"></div></div>
+            <div id="panel">
+                <a href="index.html"><div id="podstrona1">Strona główna</div></a>
+                <a href="firma.html"><div id="podstrona1">O Firmie</div></a>
+                <a href="oferta.html"><div id="podstrona1">Oferta</div></a>
+                <a href="serwis.html"><div id="podstrona1">Serwis</div></a>
+                <a href="wyslij.html"><div id="podstrona1">Wyślij do nas laptopa</div></a>
+                <a href="dojechac.html"><div id="podstrona1">Jak do nas dojechać</div></a>
+                <a href="kontakt.html"><div id="podstrona1">Kontakt</div></a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script> //ZEGAR
+        function zegar() {
+            var czas = new Date();
+            var godzina = czas.getHours();
+            var minuta = czas.getMinutes();
+            var sekunda = czas.getSeconds();
+            var tygodnie = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"]
+            if (minuta < 10) {
+                var minuta = "0" + minuta;
+            }
+            if (sekunda < 10) {
+                var sekunda = "0" + sekunda;
+            }
+
+            document.getElementById("czas").innerHTML = "Aktualna data: " + tygodnie[czas.getDay()] + " " + godzina + ":" + minuta + ":" + sekunda;
+        }
+        setInterval("zegar()", 200);
+
+        function ciastka() {
+            window.confirm("Serwis wykorzystuje pliki cookies m.in. w celu poprawienia jej dostępności, personalizacji, obsługi kont użytkowników czy aby zbierać dane, dotyczące ruchu na stronie.");
+        }
+    </script>
+
+</body>
+</html>

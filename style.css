@@ -1,0 +1,96 @@
+*{
+    background-color: #000000;
+}
+#glowny{
+    background-color: rgb(5, 49, 61);
+    position: relative;
+    margin: 1%;
+    height: 160vh;
+    width: 98%;
+    border-radius: 40px;
+}
+#zdjecie{
+    background-color: rgb(0, 0, 0);
+    position:absolute;
+    margin: 1%;
+    height: 25vh;
+    width: 98%;
+    border-radius: 40px;
+}
+#img1{
+    border-top-left-radius: 40px;
+    width: 70%;
+    float: left;
+}
+#prawastronabaneru{
+    position:absolute;
+    background: none;
+    color: rgb(173, 173, 173);
+    float: right;
+    width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 4vh;
+    margin-left: 120vh;
+    margin-top: 1.5vh;
+}
+#prawastronabaneru2 {
+    position: absolute;
+    background: none;
+    color: rgb(173, 173, 173);
+    float: right;
+    width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 3vh;
+    margin-left: 120vh;
+    margin-top: 6vh;
+    line-height: 4vh;
+}
+#panel{
+    background-color: rgb(3, 65, 82);
+    position:absolute;
+    bottom: 0; 
+    height: 6vh;
+    width: 100%;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+#podstrona1{
+    background-color: rgb(0, 53, 94);
+    padding: 1vh;
+    margin-top: 9px;
+    margin-left: 2.8%;
+    text-align: center;
+    height: 2vh;
+    width: 10%;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vh;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.5s;
+    float: left;
+}
+#podstrona1:hover{
+    background-color: rgb(0, 97, 171);
+}
+#tekst2 {
+    background-color: rgb(206, 206, 206);
+    border-radius: 20px;
+    margin-top: 30vh;
+    margin-left: 5vh;
+    width: 205vh;
+    font-size: 3vh;
+    height: 123vh;
+    position: absolute;
+    padding: 1vh;
+    scroll-behavior: auto;
+    color: black;
+    font-family: Verdana;
+}
+#tekst3 {
+    color: black;
+    font-family: Verdana;
+    background-color: rgb(206, 206, 206);
+    font-size: 3vh;
+}

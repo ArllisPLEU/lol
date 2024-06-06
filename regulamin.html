@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Serwis komputerowy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ikona.png">
+</head>
+<body>
+    <div id="glowny">
+        <div id="zdjecie">
+            <img src="baner.png" id="img1">
+            <div id="prawastronabaneru">Godziny otwarcia:</div>
+            <div id="prawastronabaneru2">pon-pią - 7:00-17:00<br>sob - 9:00-14:00<br><div id="czas"></div></div>
+            <div id="panel">
+                <a href="index.html"><div id="podstrona1">Strona główna</div></a>
+                <a href="firma.html"><div id="podstrona1">O Firmie</div></a>
+                <a href="oferta.html"><div id="podstrona1">Oferta</div></a>
+                <a href="serwis.html"><div id="podstrona1">Serwis</div></a>
+                <a href="wyslij.html"><div id="podstrona1">Wyślij do nas laptopa</div></a>
+                <a href="dojechac.html"><div id="podstrona1">Jak do nas dojechać</div></a>
+                <a href="kontakt.html"><div id="podstrona1">Kontakt</div></a>
+            </div>
+        </div>
+        <div id="tekst2">
+            § 4. Warunki korzystania z Formularza kontaktowego i zobowiązania Użytkownika.<br />
+            <ol id="tekst3">
+                <li id="tekst3">Celem skorzystania z Formularza kontaktowego Użytkownik dokonuje następujące czynności: a) wypełnienia Formularz kontaktowy poprzez podanie następujących danych i informacji: imię i nazwisko, telefon, adres e-mail, treść wiadomości stanowiącej zadane pytanie oraz kod z obrazka stanowiący zabezpieczenie Formularza kontaktowego; b) wyraża zgodę na przetwarzanie danych osobowych w celu przygotowania i przekazania odpowiedzi na zadane pytanie (pytania) oraz ich archiwizacji; c) potwierdza, że zapoznał się z treścią Regulaminu oraz że akceptuje jego wszystkie postanowienia; d) potwierdza, że zapoznał się z treścią Klauzulą informacyjną RODO oraz że akceptuje jej wszystkie postanowienia, e) wyraża wolę kontaktu poprzez naciśnięcie na przycisk (link) „Wyślij wiadomość”.</li>
+                <br />
+                <li id="tekst3">Wyrażenie zgody, o której mowa w § 4 ust. 1 lit „b” Regulaminu jest dobrowolne i może zostać cofnięte w każdej chwili bez podawania przyczyny, lecz bez wpływu na zgodność z prawem przetwarzania przed jej cofnięciem. Użytkownik ma prawo dostępu do danych, ich sprostowania, usunięcia, przenoszenia danych osobowych. Pełna informacja o ochronie danych osobowych na podstawie ogólnego rozporządzenia o ochronie danych (RODO), w tym o przysługujących prawach i sposobie ich realizacji, znajduje się w Klauzuli informacyjnej RODO zamieszonej na stronie internetowej.</li>
+                <br />
+                <li id="tekst3">Użytkownik zobowiązany jest do korzystania z Formularza kontaktowego zgodnie z przepisami prawa, postanowieniami Regulaminu oraz dobrymi obyczajami.</li>
+                <br />
+                <li id="tekst3">Użytkownik zobowiązuje się do niepodawania fałszywych danych osobowych, jak również do niepodawania danych osobowych innej osoby, bez jej zgody oraz do niepodawania adresu e-mail lub numeru telefonu, którego nie jest właścicielem. Użytkownik ponosi wyłączną odpowiedzialność za treść podanych przez siebie danych, w tym również odpowiedzialność za ewentualne naruszenie praw osób trzecich.</li>
+                <br />
+                <li id="tekst3">Użytkownik zobowiązuje się do zapoznawania się ze zmianami Regulaminu.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        //ZEGAR
+        function zegar() {
+            var czas = new Date();
+            var godzina = czas.getHours();
+            var minuta = czas.getMinutes();
+            var sekunda = czas.getSeconds();
+            var tygodnie = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"]
+            if (minuta < 10) {
+                var minuta = "0" + minuta;
+            }
+            if (sekunda < 10) {
+                var sekunda = "0" + sekunda;
+            }
+
+            document.getElementById("czas").innerHTML = "Aktualna data: " + tygodnie[czas.getDay()] + " " + godzina + ":" + minuta + ":" + sekunda;
+        }
+        setInterval("zegar()", 200);
+    </script>
+
+</body>
+</html>
